@@ -1,30 +1,26 @@
-// const router = require("express").Router();
-// import fetch from "node-fetch";
-// router.get("/BYND", (req,res) => {
-   
-//     const getData = async () => {
+const router = require("express").Router();
+const axios = require('axios').default;
 
-//         try {
-//           let url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BYND&outputsize=compact&apikey=PVGXY8RVCAKABW50';
-//           const res = await fetch(url);
-//           console.log('res:!!!!!!!!!!!!', res)
-//           const stockData = await res.json();
-//           console.log('stockdata:', stockData)
-//           return stockData
-//         } catch (error) {
-//           console.error(error);
-//         }
-//     }
-//     const results = getData()
-//     console.log('results:', results)
-   
-//     res.send(results)
 
-    
 
-//     getData();
-// }
-// )
+router.get("/:name", (req,res) => {
+   let name = req.params.name
+    const options = {
+        method: 'GET',
+        url: `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${name}&outputsize=compact&apikey=${process.env.API_KEY}`,
+      };
+      
+      axios.request(options).then(function (response) {
+         return response.data
+      })
+      .then((data) => {
+        res.send(data)
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+}
+)
   
 
-// module.exports = router;
+module.exports = router;

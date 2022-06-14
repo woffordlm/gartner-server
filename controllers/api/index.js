@@ -1,8 +1,8 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// const stockRoutes = require('./stock-routes');
+const stockRoutes = require('./stock-routes');
 
 
-// router.use('/stock', stockRoutes);
+router.use('/stock', stockRoutes);
 
-// module.exports = router;
+module.exports = router;
