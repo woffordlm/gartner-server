@@ -12,25 +12,25 @@
 
 ## Installation
 
-1. installing npm packages
+1. install npm packages
 2. Create an account with alphavantage.co and get a free api key. 
 3. Create a .env file in your main directory and store witin it your API_KEY
 4. To run the server, run the command: npm start
-5. Open up the gartner-demo project and type npm start into the command line.</p>
+5. Open up the gartner-demo project and type npm start into the command line.
 
 - [Github/demo](https://github.com/woffordlm/gartnerDemo)
 
 ## Explanation of this application's logic
 
-<h3>The server.js file acts as the starting point for our logic.</h3> 
+<h3>Server Logic </h3>
+1. The server.js file acts as the starting point for our logic.
+2. First we import all of the packages and paths that we will use in the server. 
+3. Then we assign a port value to the const PORT variable. If the process.env.PORT exists that would used instead of 3001.
+4. We then instantiate the server by assigning express() to a the app varaible. This allows us to chain on methods to the express server.
+5. We then utilize the use method to attach middleware to the server. In this case we are using it to create routes. 
+6. We then use the listen method to to tell our server to listen at the specified port number. 
 
-1. First we import all of the packages and paths that we will use in the server. 
-2. Then we assign a port value to the const PORT variable. If the process.env.PORT exists that would used instead of 3001.
-3. We then instantiate the server by assigning express() to a the app varaible. This allows us to chain on methods to the express server.
-4. We then utilize the use method to attach middleware to the server. In this case we are using it create routes. 
-5. We then use the listen method to to tell our server to listen at the specified port number. 
-
-<h3></h3>Routing & Endpoint Logic 
+<h3>Routing & Endpoint Logic </h3>
 
 1. The server directs request to index.js within the controllers folder.
 2. Once we hit the index.js file we are presented with the the only endpoint on the server. This file imports the express router method for routiing requests, and axios for making fetch requests to an api. 
