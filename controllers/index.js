@@ -16,6 +16,7 @@ router.get("/api/stock/:name", (req,res) => {
        })
        .catch(function (error) {
          console.error(error);
+         res.status(500).json(err);
        });
  }
  )
