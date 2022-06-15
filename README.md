@@ -16,11 +16,7 @@
 2. Create an account with alphavantage.co and get a free api key. 
 3. Create a .env file in your main directory and store witin it your API_KEY
 4. To run the server, run the command: npm start
-
-
-
-
-type npm starte gartner-demo front end file. Open up the gartner-demo project and type npm start into the command line.</p>
+5. Open up the gartner-demo project and type npm start into the command line.</p>
 
 - [Github/demo](https://github.com/woffordlm/gartnerDemo)
 
